@@ -13,44 +13,18 @@ const images = [
   },
 ];
 
-const imageUrl = [];
-for (const image of images) {
-  imageUrl.push(image.url);
-}
-const imageAlt = [];
-for (const image of images) {
-  imageAlt.push(image.alt);
-}
-
-const firstImage = document.createElement("li");
-firstImage.insertAdjacentHTML(
-  "afterbegin",
-  `<img src=${imageUrl[0]} alt="${imageAlt[0]}" />`
-);
-
-const secondImage = document.createElement("li");
-secondImage.insertAdjacentHTML(
-  "afterbegin",
-  `<img src=${imageUrl[1]} alt="${imageAlt[1]}" />`
-);
-
-const thirdImage = document.createElement("li");
-thirdImage.insertAdjacentHTML(
-  "afterbegin",
-  `<img src=${imageUrl[2]} alt="${imageAlt[2]}" />`
-);
-
 const gallery = document.querySelector(".gallery");
-gallery.append(firstImage, secondImage, thirdImage);
+
+images.forEach((image) => {
+  let img = document.createElement("li");
+  img.insertAdjacentHTML(
+    "afterbegin",
+    `<img src="${image.url}" alt="${image.alt}" width="500px" />`
+  );
+  img.style.objectFit = "cover";
+  gallery.append(img);
+});
+
 gallery.style.display = "flex";
 gallery.style.flexWrap = "wrap";
 gallery.style.gap = "20px";
-
-const image1 = firstImage.querySelector("img");
-image1.setAttribute("max-width", "200px");
-const image2 = secondImage.querySelector("img");
-image1.setAttribute("max-width", "200px");
-const image3 = thirdImage.querySelector("img");
-image1.setAttribute("max-width", "200px");
-
-console.log(gallery);
