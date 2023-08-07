@@ -14,6 +14,7 @@ const images = [
 ];
 
 const gallery = document.querySelector(".gallery");
+let galleryItems = [];
 
 images.forEach((image) => {
   let img = document.createElement("li");
@@ -22,8 +23,10 @@ images.forEach((image) => {
     `<img src="${image.url}" alt="${image.alt}" width="500px" />`
   );
   img.style.objectFit = "cover";
-  gallery.append(img);
+  galleryItems.push(img);
 });
+
+gallery.append(...galleryItems);
 
 gallery.style.display = "flex";
 gallery.style.flexWrap = "wrap";
