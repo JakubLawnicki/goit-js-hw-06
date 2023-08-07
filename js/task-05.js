@@ -2,7 +2,11 @@ const textInput = document.querySelector("#name-input");
 const textOutput = document.querySelector("#name-output");
 
 const textAdded = () => {
-  textOutput.textContent = textInput.value;
+  if (textInput.value === "") {
+    textOutput.textContent = "Anonymous";
+  } else {
+    textOutput.textContent = textInput.value;
+  }
 };
 
 textInput.addEventListener("input", textAdded);
