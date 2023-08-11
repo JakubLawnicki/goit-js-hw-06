@@ -24,6 +24,7 @@ const destroyBtn = document.querySelector("button[data-destroy");
 input.addEventListener("input", () => input.value);
 destroyBtn.addEventListener("click", () => {
   for (let i = 1; i <= input.value; i += 1) {
+    size -= 10;
     boxes.lastElementChild.remove();
   }
 });
