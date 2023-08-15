@@ -13,7 +13,7 @@ function createBoxes(amount) {
     boxes.lastElementChild.style.backgroundColor = getRandomHexColor();
   }
 
-  return boxes;
+  // return boxes;
 }
 
 const boxes = document.querySelector("#boxes");
@@ -21,13 +21,11 @@ const input = document.querySelector("input");
 const createBtn = document.querySelector("button[data-create]");
 const destroyBtn = document.querySelector("button[data-destroy");
 
-input.addEventListener("input", () => input.value);
+// input.addEventListener("input", () => input.value);
 destroyBtn.addEventListener("click", () => {
   for (let i = 1; i <= input.value; i += 1) {
     size -= 10;
     boxes.lastElementChild.remove();
   }
 });
-createBtn.addEventListener("click", () => {
-  return createBoxes(input.value);
-});
+createBtn.addEventListener("click", () => createBoxes(input.value));
