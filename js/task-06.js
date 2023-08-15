@@ -1,9 +1,5 @@
 const inputBox = document.querySelector("#validation-input");
 
-inputBox.addEventListener("input", () => {
-  return inputBox.value.length;
-});
-
 const checkTextLength = () => {
   if (
     inputBox.value.length > inputBox.dataset.length ||
@@ -18,7 +14,3 @@ const checkTextLength = () => {
 };
 
 inputBox.addEventListener("blur", checkTextLength);
-inputBox.addEventListener("focus", () => {
-  inputBox.classList.remove("invalid");
-  inputBox.classList.remove("valid");
-});
