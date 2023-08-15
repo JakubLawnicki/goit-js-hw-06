@@ -17,13 +17,13 @@ const gallery = document.querySelector(".gallery");
 let galleryItems = [];
 
 images.forEach((image) => {
-  let img = document.createElement("li");
-  img.insertAdjacentHTML(
+  let item = document.createElement("li");
+  item.insertAdjacentHTML(
     "afterbegin",
     `<img src="${image.url}" alt="${image.alt}" width="500px" />`
   );
-  img.style.objectFit = "cover";
-  galleryItems.push(img);
+  item.firstElementChild.style.objectFit = "cover";
+  galleryItems.push(item);
 });
 
 gallery.append(...galleryItems);
